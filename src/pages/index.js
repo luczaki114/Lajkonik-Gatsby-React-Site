@@ -1,13 +1,18 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import Banner from '../components/banner/banner'
+import WidgetOne from '../components/widget-one/widget-one'
+import WidgetTwo from '../components/widget-two/widget-two'
+import WidgetThree from '../components/widget-three/widget-three'
+
 const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
+	<div>
+		<Banner />
+		<WidgetOne />
+		<WidgetTwo />
+		<WidgetThree />
+	</div>
 )
 
 export default IndexPage
