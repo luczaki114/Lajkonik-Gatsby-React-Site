@@ -1,0 +1,59 @@
+@import '../main';
+
+.header {
+    @include vendor('transition', 'background-color #{_duration(transitions)} ease');
+    background: _palette(bg);
+    height: 3em;
+    left: 0;
+    line-height: 3em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: _misc(z-index-base);
+
+    h1 {
+        @include vendor('transition', 'opacity #{_duration(transitions)} ease');
+        height: inherit;
+        left: 1.25em;
+        line-height: inherit;
+        position: absolute;
+        top: 0;
+
+        a {
+            border: 0;
+            display: block;
+            height: inherit;
+            line-height: inherit;
+
+            img {
+                float: left;
+                width: 58px;
+                padding-right: 10px;
+            }
+
+            @include breakpoint(small) {
+                font-size: 0.8em;
+
+                img {
+                    width: 54px;
+                }
+            }
+
+            @include breakpoint(xsmall) {
+                span {
+                    display: none;
+                }
+            }
+        
+        }
+    }
+
+    &.alt {
+        background: transparent;
+
+        h1 {
+            @include vendor('pointer-events', 'none');
+            opacity: 0;
+        }
+    }
+}

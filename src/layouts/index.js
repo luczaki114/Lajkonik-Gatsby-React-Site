@@ -8,11 +8,8 @@ import favicon32 from '../assets/favicons/favicon-32x32.png'
 import favicon16 from '../assets/favicons/favicon-16x16.png'
 import safariPin from '../assets/favicons/safari-pinned-tab.svg'
 
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
-
-import '../assets/css/main.css'
-
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 const TemplateWrapper = ({ children }) => (
 	<div>
