@@ -1,11 +1,14 @@
 import React from "react"
 import Link from 'gatsby-link'
+import banner from "../assets/sass/components/banner.module.scss"
+
+console.log(banner)
 
 export default () => 
-<section id="banner">
-    <div className="inner">
+<section className={banner.banner}>
+    <div className={banner.inner}>
         <h2>Lajkonik</h2>
         <p>Song &amp; Dance Ensemble</p>
     </div>
-    <a href="#one" className="more scrolly"></a>
+    <a href="#one" className={banner.more}></a>
 </section>

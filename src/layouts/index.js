@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-import {Helmet} from 'react-helmet'
+import Helmet from 'react-helmet'
+
+import styles from '../assets/sass/layouts/pageWrapper.module.scss'
 
 import appleTouchIcon from '../assets/favicons/apple-touch-icon.png'
 import favicon32 from '../assets/favicons/favicon-32x32.png'
@@ -26,8 +27,8 @@ const TemplateWrapper = ({ children }) => (
 			<link rel="mask-icon" href={safariPin} color="#5bbad5" />
 			<meta name="theme-color" content="#ffffff" />
 		</Helmet>
-		{/* Page Wrapper */}
-		<div id="page-wrapper">
+
+		<div className={styles.pageWrapper}>
 			<Header />
 			{children()}
 			<Footer />

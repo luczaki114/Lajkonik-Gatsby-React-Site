@@ -1,6 +1,6 @@
-@import '../main';
+@import '../abstracts/all';
 
-@mixin wrapper($p) {
+@mixin widget($p) {
     background-color: _palette($p, bg);
     color: _palette($p, fg);
 
@@ -58,7 +58,7 @@
             background: _palette($p, border-bg);
         }
 
-        .select-wrapper {
+        .select-widget {
             &:before {
                 color: _palette($p, border);
             }
@@ -187,7 +187,7 @@
 
 }
 
-.wrapper {
+.widget {
     @include padding(6em, 0);
 
     > .inner {
@@ -203,33 +203,6 @@
         }
     }
 
-    &.alt {
-        padding: 0;
-    }
-
-    &.style1 {
-        @include wrapper(accent1);
-    }
-
-    &.style2 {
-        background-color: _palette(bg);
-    }
-
-    &.style3 {
-        @include wrapper(accent5);
-    }
-
-    &.style4 {
-        @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/home/hero7.jpg")'));
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    &.style5 {
-        @include wrapper(accent7);
-    }
-
     @include breakpoint(medium) {
         @include padding(4em, 3em);
     }
@@ -237,4 +210,35 @@
     @include breakpoint(small) {
         @include padding(3em, 2em);
     }
+}
+
+.fullWidth {
+    padding: 0;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.style1 {
+    @include widget(accent1);
+}
+
+.style2 {
+    background-color: _palette(bg);
+}
+
+.style3 {
+    @include widget(accent5);
+}
+
+.style4 {
+    @include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/home/hero7.jpg")'));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.style5 {
+    @include widget(accent7);
 }

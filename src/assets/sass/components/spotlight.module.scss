@@ -1,4 +1,4 @@
-@import '../main';
+@import '../abstracts/all';
 
 .spotlight {
     @include vendor('align-items', 'center');

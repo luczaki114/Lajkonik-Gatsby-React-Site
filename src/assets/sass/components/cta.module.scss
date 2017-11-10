@@ -1,6 +1,6 @@
-@import '../main';
+@import '../abstracts/all';
 
-#cta {
+.cta {
     .inner {
         @include vendor('display', 'flex');
         max-width: 45em;

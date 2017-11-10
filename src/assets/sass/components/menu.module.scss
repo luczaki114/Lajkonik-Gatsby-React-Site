@@ -1,4 +1,4 @@
-@import '../main';
+@import '../abstracts/all';
 
 .menu {
     @include vendor('transform', 'translateX(20em)');

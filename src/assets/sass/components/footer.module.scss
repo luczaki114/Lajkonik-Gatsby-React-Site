@@ -1,18 +1,28 @@
-@import '../main';
+@import '../abstracts/all';
 
-#footer {
+.footer {
     @include padding(6em, 0);
     background-color: darken(_palette(bg), 8);
     text-align: center;
 
     .icons {
         font-size: 1.25em;
+        li {
+            display: inline-block;
+            padding-right: 1em;
 
-        a {
-            color: _palette(fg-light);
+            &:last-child {
+                padding-right: 0;
+            }
 
-            &:hover {
-                color: _palette(fg);
+            a {
+                border: none;
+                color: _palette(fg-light);
+                text-decoration: none;
+    
+                &:hover {
+                    color: _palette(fg);
+                }
             }
         }
     }
