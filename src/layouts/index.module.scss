@@ -1,0 +1,14 @@
+@import '../utils/sass/abstracts/all';
+@import '../utils/sass/base/all';
+
+.pageWrapper {
+    @include vendor('transition', 'opacity #{_duration(menu)} ease');
+}
+
+.menuOpen {
+    opacity: 0.35;
+
+    &:before {
+        display: block;
+    }
+}

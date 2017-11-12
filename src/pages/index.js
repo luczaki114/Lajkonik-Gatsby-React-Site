@@ -1,11 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import Banner from '../components/banner'
-import Widget from '../components/widget'
-import Spotlight from '../components/spotLight'
-import Features from '../components/features'
-import Feature from '../components/feature'
+import Banner from '../components/banner/banner'
+import Widget from '../components/widget/widget'
+import Spotlight from '../components/spotlight/spotlight'
+import Features from '../components/features/features'
+import Feature from '../components/feature/feature'
+import Actions from '../components/actions/actions'
+import Button from '../components/button/button'
 
 import pic1 from '../assets/images/pic01.jpg'
 import pic2 from '../assets/images/pic02.jpg'
@@ -71,6 +73,18 @@ const IndexPage = () => (
 					text="Out side of dance we also have years craft workshops during the holidays." />
 			</ Features>
 		</Widget>
+
+		<Widget widgetStyle="4" textCenter="true">
+			<header>
+				<h2>Arcue ut vel commodo</h2>
+				<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+			</header>
+			<Actions vertical="true" thin="true">
+				<Button to="#" fit="true" special="true">Activate</Button>
+				<Button to="#" fit="true">Learn More</Button>
+			</Actions>
+		</Widget>
+
 	</div>
 )
 
