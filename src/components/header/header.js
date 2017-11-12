@@ -1,18 +1,21 @@
 import React from "react"
 import Link from 'gatsby-link'
 import header from "./header.module.scss"
+import classNames from 'classnames/bind';
 import Nav from "../nav/nav"
 import logoIcon from "../../assets/images/logo/Lajkonik Icon - Small.png"
 
-export default class Header extends React.Component {
-    constructor (props) {
-        super(props);
-    }   
+let cx = classNames.bind(header);
 
+export default class Header extends React.Component {
     render () {
-        console.log(this.props)
+        let classNames = cx({
+            header: true,
+            "header--invisible": !this.props.isPastBanner
+        });
+
         return (
-            <header id="header" className={header.header}>
+            <header id="header" className={classNames}>
                 <h1>
                     <Link to="/">
                         <img src={logoIcon} alt="Lajkonik Icon" />

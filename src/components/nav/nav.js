@@ -14,7 +14,6 @@ export default class Nav extends React.Component {
     }
 
     render () {
-        console.log(this.props)
         return (
             <nav className={styles.nav}>
                 <ul>

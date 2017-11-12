@@ -3,6 +3,7 @@
 
 .pageWrapper {
     @include vendor('transition', 'opacity #{_duration(menu)} ease');
+
 }
 
 .menuOpen {
@@ -10,5 +11,12 @@
 
     &:before {
         display: block;
+    }
+}
+
+.isLoading {
+    *, *:before, *:after {
+        @include vendor('animation', 'none !important');
+        @include vendor('transition', 'none !important');
     }
 }

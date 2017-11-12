@@ -14,20 +14,17 @@
         transition: opacity #{_duration(transitions)} ease;
         height: inherit;
         position: absolute;
-        left: 1.25em;
+        left: 20px;
         top: 0;
         font-weight: 800;
         line-height: inherit;
-        letter-spacing: 0.225em;
-        text-transform: uppercase;
 
         a {
             border: 0;
             display: block;
             height: inherit;
             color: white;
-            line-height: inherit;
-            text-decoration: none;
+            font-size: .5em;
 
             img {
                 float: left;
@@ -36,11 +33,7 @@
             }
 
             @include breakpoint(small) {
-                font-size: 0.8em;
-
-                img {
-                    width: 54px;
-                }
+                font-size: 0.375em;
             }
 
             @include breakpoint(xsmall) {
