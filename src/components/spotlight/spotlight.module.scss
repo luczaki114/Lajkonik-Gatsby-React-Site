@@ -6,12 +6,14 @@
 
     .image {
         @include vendor('order', '1');
+        display: block;
         border-radius: 0;
         width: 40%;
-
         img {
-            border-radius: 0;
+            display: block;
             width: 100%;
+            margin: 0;
+            border-radius: 0;
         }
     }
 

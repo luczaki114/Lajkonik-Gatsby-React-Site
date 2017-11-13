@@ -1,34 +1,35 @@
 import React from "react"
 import styles from "./widget.module.scss"
+import classNames from 'classnames/bind';
+
+let cx = classNames.bind(styles);
 
 export default class Widget extends React.Component {   
+    isWidget = {
+        isWidget: true
+    }
     render() {
-        var widgetClasses = {
-            [styles.widget] : true,
-            [styles["style1"]] : this.props.widgetStyle === "1",
-            [styles["style2"]] : this.props.widgetStyle === "2",
-            [styles["style3"]] : this.props.widgetStyle === "3",
-            [styles["style4"]] : this.props.widgetStyle === "4",
-            [styles["style5"]] : this.props.widgetStyle === "5",
-            [styles["textCenter"]] : this.props.textCenter == "true",
-            [styles["fullWidth"]] : this.props.fullWidth == "true"
-        }
-        
-        var widgetClassesString = "";
-        for (var key in widgetClasses) {
-            if (widgetClasses.hasOwnProperty(key) && widgetClasses[key] === true)  {
-                widgetClassesString += key + " ";
-            }
-        }
+        let widgetClasses = cx({
+            widget : true,
+            style1 : this.props.widgetStyle === "1",
+            style2 : this.props.widgetStyle === "2",
+            style3 : this.props.widgetStyle === "3",
+            style4 : this.props.widgetStyle === "4",
+            style5 : this.props.widgetStyle === "5",
+            cta : this.props.widgetStyle === "cta",
+            textCenter : this.props.textCenter == "true",
+            fullWidth : this.props.fullWidth == "true"
+        })
 
-        var innerClass = "";
-        if (this.props.fullWidth != "true") {
-            innerClass = styles.inner;
-        }
+        const childrenWithProps = React.Children.map(this.props.children,
+            (child) => React.cloneElement(child, {
+                isInWidget: true
+            })
+        );
 
         return (
-            <section id={this.props.id} className={widgetClassesString}>
-                <div className={innerClass}>
+            <section id={this.props.id} className={widgetClasses}>
+                <div className={styles.inner}>
                     {this.props.children}
                 </div>
             </section>

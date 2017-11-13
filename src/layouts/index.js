@@ -23,14 +23,14 @@ export default class TemplateWrapper extends React.Component {
 		this.isPastBanner = debounce(this.isPastBanner.bind(this), 50);
 		this.clickOutsideOfMenu = this.clickOutsideOfMenu.bind(this);
 		this.state = {
-			animate: false,
+			isLoading: true,
 			menuOpen: false,
-			isPastBanner: false
+			isPastBanner: false,
 		};
 	}
 
 	// The home page uses a banner and the header is initially invisible. 
-	// Once you scroll past teh banner, the header will have a background.
+	// Once you scroll past the banner, the header will have a background.
 	isPastBanner () {
 		let $bannerHeight = document.getElementById("banner").clientHeight
 		let $windowOffsetTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
@@ -42,9 +42,10 @@ export default class TemplateWrapper extends React.Component {
 		}
 	}
 
-	clickOutsideOfMenu (event) {
-		console.log(event.currentTarget)
-		console.log(event.target)
+	clickOutsideOfMenu () {
+		if (this.state.menuOpen == true) {
+			this.toggleMenu();
+		}
 	}
 
 	toggleMenu () {
@@ -53,15 +54,16 @@ export default class TemplateWrapper extends React.Component {
     }
 
 	componentDidMount () {
-		window.addEventListener('scroll', this.isPastBanner);
 
-		// using a set time out to allow for transitions and animations after initial render.
-		// Many transistions animated out on component load which caused an odd flicker.
 		let that = this;
 		setTimeout(() => {
-			that.setState({ animate: true });
-		}, 100)
-	
+			that.setState({isLoading: false});
+		}, 200)
+
+		setTimeout(() => {
+			that.isPastBanner();
+			window.addEventListener('scroll', that.isPastBanner);
+		}, 200)
 	}
 	
 	componentWillUnmount () {
@@ -69,17 +71,17 @@ export default class TemplateWrapper extends React.Component {
 	}
 
     render () {
-		let className = cx({
+		let pageWrapperClasses = cx({
 			pageWrapper: true,
             menuOpen: this.state.menuOpen
 		});
 		
-		let isLoadingClass = cx({
-			isLoading: !this.state.animate
+		let pageClasses = cx({
+			"page--loading": this.state.isLoading
 		})
 
         return (
-			<div className={isLoadingClass}>
+			<div className={pageClasses}>
 				<Helmet>
 					<title>Lajkonik - Song and Dance Ensemble</title>
 					<meta charset="utf-8" />
@@ -94,7 +96,7 @@ export default class TemplateWrapper extends React.Component {
 					<meta name="theme-color" content="#ffffff" />
 				</Helmet>
 		
-				<div id="page-wrapper" onClick={this.clickOutsideOfMenu} className={className}>
+				<div id="page-wrapper" onClick={this.clickOutsideOfMenu} className={pageWrapperClasses}>
 					<Header isPastBanner={this.state.isPastBanner} toggleMenu={this.toggleMenu} menuOpen={this.state.menuOpen} />
 					{this.props.children()}
 					<Footer />

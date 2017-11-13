@@ -6,12 +6,13 @@
     text-align: center;
 
     .icons {
+        margin-left: 0;
         margin-bottom: 2em;
         font-size: 1.25em;
         li {
             display: inline-block;
             padding-right: 1em;
-
+            
             &:last-child {
                 padding-right: 0;
             }
@@ -29,6 +30,7 @@
     }
 
     .copyright {
+        margin-left: 0;
         color: _palette(fg-light);
         font-size: 0.8em;
         letter-spacing: _size(letter-spacing-alt);

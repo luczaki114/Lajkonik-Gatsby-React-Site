@@ -9,9 +9,9 @@ import Feature from '../components/feature/feature'
 import Actions from '../components/actions/actions'
 import Button from '../components/button/button'
 
-import pic1 from '../assets/images/pic01.jpg'
-import pic2 from '../assets/images/pic02.jpg'
-import pic3 from '../assets/images/pic03.jpg'
+import pic1 from '../assets/images/home/hero1.jpg'
+import pic2 from '../assets/images/home/hero4.jpg'
+import pic3 from '../assets/images/home/hero2.jpg'
 
 const IndexPage = () => (
 	<div>
@@ -74,7 +74,7 @@ const IndexPage = () => (
 			</ Features>
 		</Widget>
 
-		<Widget widgetStyle="4" textCenter="true">
+		<Widget widgetStyle="cta">
 			<header>
 				<h2>Arcue ut vel commodo</h2>
 				<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
