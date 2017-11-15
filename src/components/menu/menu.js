@@ -25,22 +25,22 @@ export default class Menu extends React.Component {
             <div className={classNames}>
                 <a onClick={this.closeMenu} href="#menu" className={styles.close}></a>
                 <ul>
-                    <li><Link to="">Home</Link></li>
-                    <li><Link to="video-gallery">Video Gallery</Link></li>
-                    <li><Link to="photo-gallery">Photo Gallery</Link></li>
-                    <li><Link to="events">Events</Link></li>
+                    <li><Link onClick={this.closeMenu} to="">Home</Link></li>
+                    <li><Link onClick={this.closeMenu} to="video-gallery">Video Gallery</Link></li>
+                    <li><Link onClick={this.closeMenu} to="photo-gallery">Photo Gallery</Link></li>
+                    <li><Link onClick={this.closeMenu} to="events">Events</Link></li>
                     <li>
-                        <Link to="about-us">About Us</Link>
+                        <Link onClick={this.closeMenu} to="about-us">About Us</Link>
                         <ul>
-                            <li><Link to="about-us/history">History</Link></li>
-                            <li><Link to="about-us/highlights">Highlights</Link></li>
-                            <li><Link to="about-us/press">Press</Link></li>
-                            <li><Link to="about-us/folk-song-and-dance">Folk Song &amp; Dance</Link></li>
-                            <li><Link to="about-us/craft-workshops">Craft Workshops</Link></li>
+                            <li><Link onClick={this.closeMenu} to="about-us/history">History</Link></li>
+                            <li><Link onClick={this.closeMenu} to="about-us/highlights">Highlights</Link></li>
+                            <li><Link onClick={this.closeMenu} to="about-us/press">Press</Link></li>
+                            <li><Link onClick={this.closeMenu} to="about-us/folk-song-and-dance">Folk Song &amp; Dance</Link></li>
+                            <li><Link onClick={this.closeMenu} to="about-us/craft-workshops">Craft Workshops</Link></li>
                         </ul>
                     </li>
-                    <li><Link to="contact-us">Contact Us</Link></li>
-                    <li><Link to="join-us">Join Us!</Link></li>
+                    <li><Link onClick={this.closeMenu} to="contact-us">Contact Us</Link></li>
+                    <li><Link onClick={this.closeMenu} to="join-us">Join Us!</Link></li>
                 </ul>
             </div>
         )

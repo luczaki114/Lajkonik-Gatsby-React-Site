@@ -55,14 +55,48 @@
 		}
 	}
 
+	&.craft-workshops {
+		> header {
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../assets/images/internal pages/highlights.jpg")'));
+		}
+	}
+
+	&.folk-song-and-dance {
+		> header {
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../assets/images/internal pages/highlights.jpg")'));
+		}
+	}
+
+	&.highlights {
+		> header {
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../assets/images/internal pages/highlights.jpg")'));
+		}
+	}
+
 	&.history {
 		> header {
 			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../assets/images/internal pages/history.jpg")'));
 		}
 	}
 
+	&.press {
+		> header {
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../assets/images/internal pages/highlights.jpg")'));
+		}
+	}
 
-	&.highlights {
+	&.contact-us {
+		> header {
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../assets/images/internal pages/highlights.jpg")'));
+		}
+	}
+	&.events {
+		> header {
+			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../assets/images/internal pages/highlights.jpg")'));
+		}
+	}
+
+	&.join-us {
 		> header {
 			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../assets/images/internal pages/highlights.jpg")'));
 		}

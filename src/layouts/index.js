@@ -32,6 +32,10 @@ export default class TemplateWrapper extends React.Component {
 	// The home page uses a banner and the header is initially invisible. 
 	// Once you scroll past the banner, the header will have a background.
 	isPastBanner () {
+		let isHomePage = document.getElementById("banner") != null ;
+		if (!isHomePage) {
+			return;
+		}
 		let $bannerHeight = document.getElementById("banner").clientHeight
 		let $windowOffsetTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
@@ -60,10 +64,9 @@ export default class TemplateWrapper extends React.Component {
 			that.setState({isLoading: false});
 		}, 200)
 
-		setTimeout(() => {
-			that.isPastBanner();
-			window.addEventListener('scroll', that.isPastBanner);
-		}, 200)
+		this.isPastBanner();
+		window.addEventListener('scroll', this.isPastBanner);
+
 	}
 	
 	componentWillUnmount () {
